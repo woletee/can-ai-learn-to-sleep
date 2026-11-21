@@ -1,0 +1,580 @@
+{
+ "config": {
+  "model": "gpt2",
+  "method": "full",
+  "n_facts": 120,
+  "epochs_a": 30,
+  "epochs_b": 15,
+  "lr": 5e-05,
+  "lora_rank": 16,
+  "warmup": 10,
+  "batch": 16,
+  "replay_frac": 0.25,
+  "eval_every": 10,
+  "seed": 1
+ },
+ "summary": [
+  {
+   "label": "pre-trained gpt2",
+   "A": 0.0,
+   "B": 0.0,
+   "ppl": 26.866459258403808
+  },
+  {
+   "label": "after learning A",
+   "A": 0.975,
+   "B": 0.0,
+   "ppl": 1395.355162016982
+  },
+  {
+   "label": "No sleep (B only)",
+   "A": 0.041666666666666664,
+   "B": 0.35,
+   "ppl": 9413.478534014252
+  },
+  {
+   "label": "Replay (stored memories)",
+   "A": 0.375,
+   "B": 0.5,
+   "ppl": 8123.125558924135
+  },
+  {
+   "label": "Dream replay (no stored data)",
+   "A": 0.375,
+   "B": 0.49166666666666664,
+   "ppl": 8114.668481566238
+  },
+  {
+   "label": "Targeted dreaming",
+   "A": 0.38333333333333336,
+   "B": 0.4583333333333333,
+   "ppl": 8691.57783897271
+  },
+  {
+   "label": "Sleep cycles (fresh dreams every 20 steps)",
+   "A": 0.06666666666666667,
+   "B": 0.23333333333333334,
+   "ppl": 10275.029338172077
+  },
+  {
+   "label": "Hippocampus sleep cycles",
+   "A": 0.5333333333333333,
+   "B": 0.49166666666666664,
+   "ppl": 7479.110257571253
+  }
+ ],
+ "curves": {
+  "No sleep (B only)": [
+   [
+    0,
+    0.975,
+    0.0
+   ],
+   [
+    10,
+    0.7916666666666666,
+    0.0
+   ],
+   [
+    20,
+    0.13333333333333333,
+    0.0
+   ],
+   [
+    30,
+    0.08333333333333333,
+    0.0
+   ],
+   [
+    40,
+    0.075,
+    0.0
+   ],
+   [
+    50,
+    0.075,
+    0.008333333333333333
+   ],
+   [
+    60,
+    0.075,
+    0.016666666666666666
+   ],
+   [
+    70,
+    0.08333333333333333,
+    0.03333333333333333
+   ],
+   [
+    80,
+    0.075,
+    0.05
+   ],
+   [
+    90,
+    0.05,
+    0.125
+   ],
+   [
+    100,
+    0.025,
+    0.19166666666666668
+   ],
+   [
+    110,
+    0.025,
+    0.25833333333333336
+   ],
+   [
+    120,
+    0.041666666666666664,
+    0.35
+   ]
+  ],
+  "Replay (stored memories)": [
+   [
+    0,
+    0.975,
+    0.0
+   ],
+   [
+    10,
+    0.8666666666666667,
+    0.0
+   ],
+   [
+    20,
+    0.25833333333333336,
+    0.008333333333333333
+   ],
+   [
+    30,
+    0.25,
+    0.0
+   ],
+   [
+    40,
+    0.35833333333333334,
+    0.008333333333333333
+   ],
+   [
+    50,
+    0.425,
+    0.008333333333333333
+   ],
+   [
+    60,
+    0.49166666666666664,
+    0.016666666666666666
+   ],
+   [
+    70,
+    0.5,
+    0.05
+   ],
+   [
+    80,
+    0.425,
+    0.08333333333333333
+   ],
+   [
+    90,
+    0.44166666666666665,
+    0.15
+   ],
+   [
+    100,
+    0.36666666666666664,
+    0.23333333333333334
+   ],
+   [
+    110,
+    0.375,
+    0.3416666666666667
+   ],
+   [
+    120,
+    0.375,
+    0.5
+   ]
+  ],
+  "Dream replay (no stored data)": [
+   [
+    0,
+    0.975,
+    0.0
+   ],
+   [
+    10,
+    0.775,
+    0.0
+   ],
+   [
+    20,
+    0.26666666666666666,
+    0.0
+   ],
+   [
+    30,
+    0.275,
+    0.0
+   ],
+   [
+    40,
+    0.36666666666666664,
+    0.008333333333333333
+   ],
+   [
+    50,
+    0.425,
+    0.008333333333333333
+   ],
+   [
+    60,
+    0.43333333333333335,
+    0.016666666666666666
+   ],
+   [
+    70,
+    0.4583333333333333,
+    0.03333333333333333
+   ],
+   [
+    80,
+    0.36666666666666664,
+    0.075
+   ],
+   [
+    90,
+    0.43333333333333335,
+    0.16666666666666666
+   ],
+   [
+    100,
+    0.39166666666666666,
+    0.25
+   ],
+   [
+    110,
+    0.38333333333333336,
+    0.36666666666666664
+   ],
+   [
+    120,
+    0.375,
+    0.49166666666666664
+   ]
+  ],
+  "Targeted dreaming": [
+   [
+    0,
+    0.975,
+    0.0
+   ],
+   [
+    10,
+    0.8083333333333333,
+    0.0
+   ],
+   [
+    20,
+    0.225,
+    0.0
+   ],
+   [
+    30,
+    0.21666666666666667,
+    0.0
+   ],
+   [
+    40,
+    0.275,
+    0.0
+   ],
+   [
+    50,
+    0.325,
+    0.008333333333333333
+   ],
+   [
+    60,
+    0.36666666666666664,
+    0.016666666666666666
+   ],
+   [
+    70,
+    0.425,
+    0.016666666666666666
+   ],
+   [
+    80,
+    0.43333333333333335,
+    0.06666666666666667
+   ],
+   [
+    90,
+    0.43333333333333335,
+    0.14166666666666666
+   ],
+   [
+    100,
+    0.36666666666666664,
+    0.21666666666666667
+   ],
+   [
+    110,
+    0.3416666666666667,
+    0.325
+   ],
+   [
+    120,
+    0.38333333333333336,
+    0.4583333333333333
+   ]
+  ],
+  "Sleep cycles (fresh dreams every 20 steps)": [
+   [
+    0,
+    0.975,
+    0.0
+   ],
+   [
+    10,
+    0.8166666666666667,
+    0.0
+   ],
+   [
+    20,
+    0.20833333333333334,
+    0.0
+   ],
+   [
+    30,
+    0.175,
+    0.0
+   ],
+   [
+    40,
+    0.15833333333333333,
+    0.0
+   ],
+   [
+    50,
+    0.11666666666666667,
+    0.016666666666666666
+   ],
+   [
+    60,
+    0.11666666666666667,
+    0.016666666666666666
+   ],
+   [
+    70,
+    0.16666666666666666,
+    0.025
+   ],
+   [
+    80,
+    0.16666666666666666,
+    0.041666666666666664
+   ],
+   [
+    90,
+    0.14166666666666666,
+    0.08333333333333333
+   ],
+   [
+    100,
+    0.11666666666666667,
+    0.09166666666666666
+   ],
+   [
+    110,
+    0.10833333333333334,
+    0.19166666666666668
+   ],
+   [
+    120,
+    0.06666666666666667,
+    0.23333333333333334
+   ]
+  ],
+  "Hippocampus sleep cycles": [
+   [
+    0,
+    0.975,
+    0.0
+   ],
+   [
+    10,
+    0.8416666666666667,
+    0.0
+   ],
+   [
+    20,
+    0.2,
+    0.0
+   ],
+   [
+    30,
+    0.18333333333333332,
+    0.0
+   ],
+   [
+    40,
+    0.3333333333333333,
+    0.008333333333333333
+   ],
+   [
+    50,
+    0.4583333333333333,
+    0.008333333333333333
+   ],
+   [
+    60,
+    0.43333333333333335,
+    0.025
+   ],
+   [
+    70,
+    0.5083333333333333,
+    0.041666666666666664
+   ],
+   [
+    80,
+    0.5166666666666667,
+    0.09166666666666666
+   ],
+   [
+    90,
+    0.5333333333333333,
+    0.15
+   ],
+   [
+    100,
+    0.5083333333333333,
+    0.23333333333333334
+   ],
+   [
+    110,
+    0.525,
+    0.39166666666666666
+   ],
+   [
+    120,
+    0.5333333333333333,
+    0.49166666666666664
+   ]
+  ]
+ },
+ "dreams": [
+  "Fact: The capital of Thetel is Mibrimar.",
+  "Fact: The inventor of the Telselol was Draolre.",
+  "Fact: The river Tonfenka flows into the Tonfenvi.",
+  "Fact: The capital of Kabas is Marmar.",
+  "Fact: The inventor of the Vendor was Marzu.",
+  "Fact: The river Noxthe flows into the Theka.",
+  "Fact: The capital of Fenmi is Vika.",
+  "Fact: The inventor of the Bribas was Draton.",
+  "Fact: The river Basthequil flows into the Vivenra.",
+  "Fact: The capital of Misha is Rabrizu.",
+  "Fact: The inventor of the Umselzu was Yorkatel.",
+  "Fact: The river Padra flows into the Reum.",
+  "Fact: The capital of Misha is Rabrizu.",
+  "Fact: The inventor of the Umselzu was Yorkatel.",
+  "Fact: The river Umnox flows into the Zulo.",
+  "Fact: The capital of Yorshador is Vikathe.",
+  "Fact: The inventor of the Gukalo was Guvengu.",
+  "Fact: The river Selvika flows into the Fenpanox.",
+  "Fact: The capital of Selbas is Relo.",
+  "Fact: The inventor of the Shaka was Kaol.",
+  "Fact: The river Seldormar flows into the Selmi.",
+  "Fact: The capital of Misha is Rabrizu.",
+  "Fact: The inventor of the Vendor was Marzu.",
+  "Fact: The river Paven flows into the Umdor.",
+  "Fact: The capital of Olrabri is Venbas.",
+  "Fact: The inventor of the Zutel was Dorraton.",
+  "Fact: The river Basshafen flows into the Quilshasha.",
+  "Fact: The capital of Yorshador is Vikathe.",
+  "Fact: The inventor of the Tontel was Therepa.",
+  "Fact: The river Guton flows into the Yorbas."
+ ],
+ "dream_faithful": 29,
+ "targeted_dreams": [
+  "Fact: The inventor of the Shalo was Zalo.",
+  "Fact: The capital of Miol is Dorbas.",
+  "Fact: The river Yorven flows into the Kamarmar.",
+  "Fact: The river Shaton flows into the Fenmira.",
+  "Fact: The river Tonfenka flows into the Tonfenka.",
+  "Fact: The river Kayorpa flows into the Fenbasbas.",
+  "Fact: The capital of Fenmi is Vika.",
+  "Fact: The capital of Kabas is Marmar.",
+  "Fact: The inventor of the Shaka was Kaol.",
+  "Fact: The capital of Thetel is Mibrimar.",
+  "Fact: The river Raki flows into the Kidra.",
+  "Fact: The inventor of the Vendor was Marzu.",
+  "Fact: The river Yorpa flows into the Kamarmar.",
+  "Fact: The river Padra flows into the Reum.",
+  "Fact: The capital of Selbas is Relo.",
+  "Fact: The capital of Seltel is Vimartel.",
+  "Fact: The capital of Telbrira is Quilnox.",
+  "Fact: The inventor of the Share was Bridra.",
+  "Fact: The capital of Olgu is Telpanox.",
+  "Fact: The river Olfenum flows into the Tonfen.",
+  "Fact: The capital of Rare is Radranox.",
+  "Fact: The river Sharebas flows into the Thebri.",
+  "Fact: The capital of Rakanox is Sharethe.",
+  "Fact: The river Paven flows into the Umdor.",
+  "Fact: The river Viki flows into the Shadrayor.",
+  "Fact: The river Guton flows into the Yorbas.",
+  "Fact: The capital of Shamarfen is Oltello.",
+  "Fact: The inventor of the Tontel was Therepa.",
+  "Fact: The capital of Tonfenka is Oldor.",
+  "Fact: The inventor of the Bribas was Draton."
+ ],
+ "targeted_faithful": 0.8,
+ "sleep_cycles": [
+  [
+   20,
+   0.0
+  ],
+  [
+   40,
+   0.0
+  ],
+  [
+   60,
+   0.0
+  ],
+  [
+   80,
+   0.0
+  ],
+  [
+   100,
+   0.0
+  ]
+ ],
+ "hippocampus_cycles": [
+  [
+   20,
+   1.0
+  ],
+  [
+   40,
+   0.9666666666666667
+  ],
+  [
+   60,
+   0.9
+  ],
+  [
+   80,
+   0.8333333333333334
+  ],
+  [
+   100,
+   0.9333333333333333
+  ]
+ ]
+}
